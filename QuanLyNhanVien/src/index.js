@@ -101,9 +101,13 @@ function renderListNV(data) {
         <td>${nv.tongLuong}</td>
         <td>${nv.xepLoai}</td>
         <td>
-            <button class="btn btn-info" onclick ="suaSV('${nv.tk}')">Xóa</button>
+            <button class="btn btn-info" onclick ="xoaNV('${nv.tk}')">Xóa</button>
         </tr>
     `;
   }
   getele("tableDanhSach").innerHTML = content;
+}
+function xoaNV(tk) {
+  dsnv._xoaNV(tk);
+  renderListNV(dsnv.arr);
 }
