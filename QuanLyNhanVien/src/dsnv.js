@@ -33,4 +33,18 @@ function DanhSachNhanVien() {
       this.arr[index] = nv;
     }
   };
+  this._timKiemNV = function () {
+    var mangTimKiem = [];
+    for (var i = 0; i < this.arr.length; i++) {
+      var nv = this.arr[i];
+
+      var keywordLowerCase = keyword.toLowerCase();
+
+      var xepLoaiLowerCase = nv.xepLoai.toLowerCase();
+      if (xepLoaiLowerCase.indexOf(keywordLowerCase) !== -1) {
+        mangTimKiem.push(nv);
+      }
+    }
+    return mangTimKiem;
+  };
 }

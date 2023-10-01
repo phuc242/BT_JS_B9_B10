@@ -134,3 +134,9 @@ function capNhatNV() {
     renderListNV(dsnv.arr);
   }
 }
+getEle("searchName").addEventListener("keyup"),
+  function () {
+    var keyword = getEle("searchName").value;
+    var mangTimKiem = dsnv._timKiemNV(keyword);
+    renderListSV(mangTimKiem);
+  };

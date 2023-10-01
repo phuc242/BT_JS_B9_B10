@@ -22,8 +22,7 @@ function kiemTraDoDaiKyTu(value, min, max, idCanhBao, mess) {
 
 function kiemTraKyTu(value, idCanhBao, mess) {
   var domSpan = document.getElementById(idCanhBao);
-  var regexString =
-    /[^a-z0-9A-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễếệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]/u;
+  var regexString = /^[a-zA-Z ]+$/;
   var isValid = regexString.test(value);
   if (isValid == true) {
     domSpan.innerHTML = "";
