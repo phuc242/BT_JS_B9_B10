@@ -61,6 +61,9 @@ function layThongTinNhanVien() {
     "tbGiolam",
     "Nhập từ 80 đến 200 tiếng"
   );
+  if (!isValid) {
+    return null;
+  }
 
   var nv = new NhanVien(
     _tk,
@@ -97,6 +100,8 @@ function renderListNV(data) {
         <td>${nv.chucVu}</td>
         <td>${nv.tongLuong}</td>
         <td>${nv.xepLoai}</td>
+        <td>
+            <button class="btn btn-info" onclick ="suaSV('${nv.tk}')">Xóa</button>
         </tr>
     `;
   }
