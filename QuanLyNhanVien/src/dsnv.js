@@ -20,5 +20,17 @@ function DanhSachNhanVien() {
       this.arr.splice(index, 1);
     }
   };
-  this.capNhatNV = function (params) {};
+  this._layThongTinNVTheoTk = function (tk) {
+    var index = this.timViTriNV(tk);
+    if (index !== -1) {
+      return this.arr[index];
+    }
+    return null;
+  };
+  this._capNhatNV = function (nv) {
+    var index = this.timViTriNV(nv.tk);
+    if (index !== -1) {
+      this.arr[index] = nv;
+    }
+  };
 }

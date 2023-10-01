@@ -101,13 +101,36 @@ function renderListNV(data) {
         <td>${nv.tongLuong}</td>
         <td>${nv.xepLoai}</td>
         <td>
-            <button class="btn btn-info" onclick ="xoaNV('${nv.tk}')">Xóa</button>
+            <button class="btn btn-info" onclick ="suaNV('${nv.tk}')">Sửa</button>
+            <button class="btn btn-danger" onclick ="xoaNV('${nv.tk}')">Xóa</button>
         </tr>
     `;
   }
   getele("tableDanhSach").innerHTML = content;
 }
+function suaNV(tk) {
+  var nv = dsnv._layThongTinNVTheoTk(tk);
+  if (nv) {
+    getele("tknv").value = nv.tk;
+    getele("tknv").disabled = true;
+    getele("name").value = nv.hoTen;
+    getele("email").value = nv.email;
+    getele("password").value = nv.mk;
+    getele("datepicker").value = nv.ngayLam;
+    getele("luongCB").value = nv.luong;
+    getele("chucvu").value = nv.chucVu;
+    getele("gioLam").value = nv.gioLam;
+  }
+}
 function xoaNV(tk) {
   dsnv._xoaNV(tk);
   renderListNV(dsnv.arr);
+}
+
+function capNhatNV() {
+  var nv = layThongTinNhanVien();
+  if (nv) {
+    dsnv._capNhatNV(nv);
+    renderListNV(dsnv.arr);
+  }
 }
